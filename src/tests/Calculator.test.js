@@ -96,5 +96,26 @@ describe('Calculator', () => {
     fireEvent.click(equals);
     expect(runningTotal.textContent).toEqual('21');
   })
+
+  it('should be able to clear running total', () => {
+    const button2 = container.getByTestId('number2');
+    const button1 = container.getByTestId('number1');
+    const button5 = container.getByTestId('number5');
+    const button7 = container.getByTestId('number7');
+    const add = container.getByTestId('operator-add');
+    const multiply = container.getByTestId('operator-multiply');
+    const clear = container.getByTestId('clear');
+    const equals = container.getByTestId('operator-equals');
+    const runningTotal = container.getByTestId('running-total');
+    fireEvent.click(button2);
+    fireEvent.click(add);
+    fireEvent.click(button1);
+    fireEvent.click(multiply);
+    fireEvent.click(button5);
+    fireEvent.click(clear);
+    fireEvent.click(button7);
+    fireEvent.click(equals);
+    expect(runningTotal.textContent).toEqual('21');
+  })
 })
 
