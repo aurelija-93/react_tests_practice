@@ -40,4 +40,14 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '3')
   })
+
+  it('should be able to chain operations together', () => {
+    cy.get('#number2').click();
+    cy.get('#operator-add').click();
+    cy.get('#number1').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number7').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '21')
+  })
 })
