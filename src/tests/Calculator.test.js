@@ -53,6 +53,21 @@ describe('Calculator', () => {
     fireEvent.click(equals);
     expect(runningTotal.textContent).toEqual('15');
   })
+
+  it('should be able to perform division', () => {
+    const button2 = container.getByTestId('number2');
+    const button1 = container.getByTestId('number1');
+    const button7 = container.getByTestId('number7');
+    const divide = container.getByTestId('operator-divide');
+    const equals = container.getByTestId('operator-equals');
+    const runningTotal = container.getByTestId('running-total');
+    fireEvent.click(button2);
+    fireEvent.click(button1);
+    fireEvent.click(divide);
+    fireEvent.click(button7);
+    fireEvent.click(equals);
+    expect(runningTotal.textContent).toEqual('3');
+  })
   
 })
 
