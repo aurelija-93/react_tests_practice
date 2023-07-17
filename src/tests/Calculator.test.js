@@ -40,6 +40,19 @@ describe('Calculator', () => {
     fireEvent.click(equals);
     expect(runningTotal.textContent).toEqual('3');
   })
+
+  it('should be able to perform multiplication', () => {
+    const button3 = container.getByTestId('number3');
+    const button5 = container.getByTestId('number5');
+    const multiply = container.getByTestId('operator-multiply');
+    const equals = container.getByTestId('operator-equals');
+    const runningTotal = container.getByTestId('running-total');
+    fireEvent.click(button3);
+    fireEvent.click(multiply);
+    fireEvent.click(button5);
+    fireEvent.click(equals);
+    expect(runningTotal.textContent).toEqual('15');
+  })
   
 })
 
