@@ -129,4 +129,12 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '999998000001')
   })
+
+  it('should be able to handle division by 0', () => {
+    cy.get('#number2').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number0').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', 'error: division by 0')
+  })
 })
