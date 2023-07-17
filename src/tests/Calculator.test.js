@@ -27,5 +27,19 @@ describe('Calculator', () => {
     fireEvent.click(equals);
     expect(runningTotal.textContent).toEqual('5');
   })
+
+  it('should be able to perform subtraction', () => {
+    const button7 = container.getByTestId('number7');
+    const button4 = container.getByTestId('number4');
+    const subtract = container.getByTestId('operator-subtract');
+    const equals = container.getByTestId('operator-equals');
+    const runningTotal = container.getByTestId('running-total');
+    fireEvent.click(button7);
+    fireEvent.click(subtract);
+    fireEvent.click(button4);
+    fireEvent.click(equals);
+    expect(runningTotal.textContent).toEqual('3');
+  })
+  
 })
 
